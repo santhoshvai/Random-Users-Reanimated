@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useTheme } from '../../../common/theme'
 import { fetchUsers } from '../../../data/user-service'
 import { User } from '../../../model/user'
@@ -18,9 +19,6 @@ const styles = StyleSheet.create({
   contentContainerStyle: {
     paddingBottom: 16,
   },
-  activityIndicator: {
-    marginBottom: 8,
-  },
   item: {
     height: 80,
     flexDirection: 'row',
@@ -29,6 +27,11 @@ const styles = StyleSheet.create({
   seperator: {
     height: StyleSheet.hairlineWidth,
     width: '100%',
+  },
+  loadingMoreIndicator: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
   },
 })
 
@@ -61,6 +64,7 @@ const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
   const [{ users, initialLoading, loadingMore }, setUsersState] =
     useState<State>(INITIAL_STATE)
   const abortControllerRef = useRef<AbortController | null>(null)
+  const safeAreaInsets = useSafeAreaInsets()
 
   const onEndReached = useCallback(() => {
     const paginate = async (): Promise<void> => {
@@ -140,9 +144,21 @@ const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
         ItemSeparatorComponent={ItemSeperator}
         getItemLayout={getUserItemLayout}
       />
+
       {(initialLoading || loadingMore) && (
         <ActivityIndicator
-          style={styles.activityIndicator}
+          style={
+            initialLoading
+              ? // shows up on centre of the screen
+                StyleSheet.absoluteFill
+              : [
+                  // shows up at the bottom
+                  styles.loadingMoreIndicator,
+                  {
+                    bottom: safeAreaInsets.bottom || 8,
+                  },
+                ]
+          }
           size={loadingMore ? 'small' : 'large'}
           color={theme.textColor}
         />

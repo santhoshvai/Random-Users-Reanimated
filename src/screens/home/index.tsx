@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native'
+import { StatusBar, StyleSheet, useColorScheme } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { useTheme } from '../../common/theme'
 import { User } from '../../model/user'
 import UserList from './user-list'
@@ -24,6 +20,7 @@ const Home = () => {
   return (
     <SafeAreaView
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+      edges={['top', 'right', 'left']}
     >
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
