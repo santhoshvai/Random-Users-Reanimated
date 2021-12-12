@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Pressable, StyleSheet, Text, useColorScheme, View } from 'react-native'
+import { Pressable, StyleSheet, Text, useColorScheme } from 'react-native'
 import { BlurView } from '@react-native-community/blur'
 import Animated, {
   runOnJS,
