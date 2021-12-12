@@ -8,7 +8,7 @@ export function getUserDateOfBirthText(dob: Dob) {
   })
 }
 
-export function getuserFullNameText(name: Name) {
+export function getUserFullNameText(name: Name) {
   return name.first + ' ' + name.last
 }
 

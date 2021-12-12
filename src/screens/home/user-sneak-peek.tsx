@@ -12,7 +12,7 @@ import { User } from '../../model/user'
 import { useTheme } from '../../common/theme'
 import {
   getUserDateOfBirthText,
-  getuserFullNameText,
+  getUserFullNameText,
   getUserLocationText,
 } from '../../common/data-utils'
 
@@ -121,7 +121,7 @@ const UserSneakPeek: React.FC<Props> = ({ user, onClose }) => {
           onStartShouldSetResponder={() => true}
         >
           <Text style={[styles.fullName, { color: theme.textColor }]}>
-            {getuserFullNameText(user.name)}
+            {getUserFullNameText(user.name)}
           </Text>
           <Text style={detailTextStyle}>{user.gender}</Text>
           <Text style={detailTextStyle}>{user.email}</Text>

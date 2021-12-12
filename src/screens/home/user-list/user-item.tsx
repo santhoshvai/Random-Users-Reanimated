@@ -1,5 +1,6 @@
 import React from 'react'
 import { TouchableHighlight, Text, StyleSheet, View, Image } from 'react-native'
+import { getUserFullNameText } from '../../../common/data-utils'
 import { useTheme } from '../../../common/theme'
 import { User } from '../../../model/user'
 
@@ -54,7 +55,7 @@ const UserItem: React.FC<Props> = ({ user, setSneakPeekUser }) => {
             numberOfLines={1}
             allowFontScaling={false}
           >
-            {first + ' ' + last}
+            {getUserFullNameText(user.name)}
           </Text>
           <Text
             style={[styles.phoneNumber, { color: theme.textDimmedColor }]}
