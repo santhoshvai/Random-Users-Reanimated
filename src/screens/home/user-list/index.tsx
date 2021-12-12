@@ -42,6 +42,8 @@ const ItemSeperator = () => {
   )
 }
 
+const keyExtractor = (item: User) => item.cell
+
 type State = {
   users: User[]
   initialLoading: boolean
@@ -128,8 +130,6 @@ const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
     ({ item }) => <UserItem user={item} setSneakPeekUser={setSneakPeekUser} />,
     [],
   )
-
-  const keyExtractor = useCallback((item: User) => item.cell, [])
 
   return (
     <>
