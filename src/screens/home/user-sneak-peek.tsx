@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
   detailExplanation: {
     fontWeight: '600',
   },
+  gender: {
+    textTransform: 'capitalize',
+  },
 })
 
 type Props = {
@@ -128,7 +131,7 @@ const UserSneakPeek: React.FC<Props> = ({ user, onClose }) => {
           <Text style={[styles.fullName, { color: theme.textColor }]}>
             {getUserFullNameText(user.name)}
           </Text>
-          <Text style={detailTextStyle}>{user.gender}</Text>
+          <Text style={[detailTextStyle, styles.gender]}>{user.gender}</Text>
           <Text style={detailTextStyle}>{user.email}</Text>
           <Text style={detailTextStyle}>
             <Text style={styles.detailExplanation}>Birthdate: </Text>
