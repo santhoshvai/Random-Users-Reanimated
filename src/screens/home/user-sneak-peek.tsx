@@ -107,7 +107,11 @@ const UserSneakPeek: React.FC<Props> = ({ user, onClose }) => {
   const detailTextStyle = [styles.detail, { color: theme.textColor }]
 
   return (
-    <Pressable style={styles.pressableContainer} onPress={onContainerPress}>
+    <Pressable
+      style={styles.pressableContainer}
+      onPress={onContainerPress}
+      testID="user-sneak-peek-container"
+    >
       <AnimatedBlurView
         style={[StyleSheet.absoluteFill, blurViewAnimatedStyle]}
         blurType={colorScheme === 'dark' ? 'dark' : 'light'}
@@ -119,6 +123,7 @@ const UserSneakPeek: React.FC<Props> = ({ user, onClose }) => {
           style={sneakPeekContainerStyle}
           // block the container's closing behavior on tap
           onStartShouldSetResponder={() => true}
+          testID="user-sneak-peek-card"
         >
           <Text style={[styles.fullName, { color: theme.textColor }]}>
             {getUserFullNameText(user.name)}

@@ -134,6 +134,7 @@ const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
   return (
     <>
       <FlatList
+        testID="user-list"
         removeClippedSubviews
         data={users}
         renderItem={renderItem}
@@ -147,6 +148,7 @@ const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
 
       {(initialLoading || loadingMore) && (
         <ActivityIndicator
+          testID="loading-indicator"
           style={
             initialLoading
               ? // shows up on centre of the screen

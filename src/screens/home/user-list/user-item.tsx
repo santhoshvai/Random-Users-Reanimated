@@ -40,12 +40,12 @@ type Props = {
 
 const UserItem: React.FC<Props> = ({ user, setSneakPeekUser }) => {
   const theme = useTheme()
-  const { first, last } = user.name
 
   return (
     <TouchableHighlight
       underlayColor={theme.cardBackgroundColor}
       onLongPress={() => setSneakPeekUser(user)}
+      testID={'list-item'}
     >
       <View style={styles.container}>
         <Image style={styles.avatar} source={{ uri: user.picture.thumbnail }} />
