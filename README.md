@@ -4,7 +4,7 @@ An app that has a single screen that fetches and displays a random list of users
 
 The list shows basic info like name, phone and avatar. Long press on an item in the list shows the details of the user in an overlay. The overlay is similar to what is seen in iOS contacts app. It also supports light or dark mode as per the system setting.
 
-## Install (one-time)
+## Install dependencies
 
 ```
 npm i
@@ -13,9 +13,16 @@ npx pod-install
 
 ## Run the app
 
+### on iOS
+
 ```
-npm run start
-npm run ios (or) npm run android
+npm run ios
+```
+
+### on Android
+
+```
+npm run android
 ```
 
 ## Run End-to-End (UI) tests
