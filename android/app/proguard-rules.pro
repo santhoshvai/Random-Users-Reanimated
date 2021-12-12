@@ -8,3 +8,6 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+# needed for usage of reanimated 2
+-keep class com.facebook.react.turbomodule.** { *; }
