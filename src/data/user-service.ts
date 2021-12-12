@@ -9,7 +9,7 @@ interface JSONResponse {
 export const fetchUsers = async (
   page: number,
   abortSignal: AbortController['signal'],
-  numResults = 20,
+  numResults: number,
 ): Promise<User[]> => {
   const response = await fetch(
     `https://randomuser.me/api/?page=${page}&results=${numResults}`,

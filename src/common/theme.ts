@@ -26,5 +26,6 @@ const DarkTheme: Theme = {
 
 export const useTheme = () => {
   const isDark = useColorScheme() === 'dark'
+
   return isDark ? DarkTheme : LightTheme
 }
