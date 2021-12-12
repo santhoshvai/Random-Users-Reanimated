@@ -78,9 +78,9 @@ export const getUserItemLayout = (
   index,
 })
 
-// the props are always equal, no need for shallow diffing
+// the props are always equal when the key is same, no need for shallow diffing
 const propsAreEqual = () => true
 
-const MemoizedUserItem = React.memo(UserItem, propsAreEqual)
+const PureUserItem = React.memo(UserItem, propsAreEqual)
 
-export default MemoizedUserItem
+export default PureUserItem
