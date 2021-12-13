@@ -2,7 +2,9 @@
 
 An app that has a single screen that fetches and displays a random list of users. The data is taken from https://randomuser.me.
 
-The list shows basic info like name, phone and avatar. Long press on an item in the list shows the details of the user in an overlay. The overlay is similar to what is seen in iOS contacts app. It also supports light or dark mode as per the system setting.
+The list shows basic info like name, phone and avatar. Long press on an item in the list shows the details of the user in an overlay. The overlay is similar to what is seen in iOS contacts app.
+
+The list loads more results as the user scrolls down to the bottom edge (pagination). The app also supports light or dark mode as per the system setting. The overlay view reveals through a pop-out animation.
 
 ## Install dependencies
 
