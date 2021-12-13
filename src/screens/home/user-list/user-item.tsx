@@ -38,7 +38,7 @@ type Props = {
   setSneakPeekUser: (user: User) => void
 }
 
-const UserItem: React.FC<Props> = ({ user, setSneakPeekUser }) => {
+const UserItem = ({ user, setSneakPeekUser }: Props) => {
   const theme = useTheme()
 
   return (

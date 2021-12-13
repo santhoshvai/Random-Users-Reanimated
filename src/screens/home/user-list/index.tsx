@@ -60,7 +60,7 @@ type Props = {
   setSneakPeekUser: (user: User) => void
 }
 
-const UserList: React.FC<Props> = ({ setSneakPeekUser }) => {
+const UserList = ({ setSneakPeekUser }: Props) => {
   const theme = useTheme()
   const paginationRef = useRef(1)
   const [{ users, initialLoading, loadingMore }, setUsersState] =

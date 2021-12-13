@@ -59,7 +59,7 @@ type Props = {
 
 const AnimatedBlurView = Animated.createAnimatedComponent(BlurView)
 
-const UserSneakPeek: React.FC<Props> = ({ user, onClose }) => {
+const UserSneakPeek = ({ user, onClose }: Props) => {
   const theme = useTheme()
   const colorScheme = useColorScheme()
   const sharedAnimation = useSharedValue(0)
