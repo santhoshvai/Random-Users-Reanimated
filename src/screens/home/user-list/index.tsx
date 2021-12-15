@@ -128,7 +128,7 @@ const UserList = ({ setSneakPeekUser }: Props) => {
 
   const renderItem: ListRenderItem<User> = useCallback(
     ({ item }) => <UserItem user={item} setSneakPeekUser={setSneakPeekUser} />,
-    [],
+    [setSneakPeekUser],
   )
 
   return (
